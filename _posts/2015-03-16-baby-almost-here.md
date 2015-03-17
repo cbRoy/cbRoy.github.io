@@ -1,5 +1,5 @@
 ---
-title: Baby Auden is almost here!
+title: Ayden Beckett Roy is almost here!
 layout: new
 category: baby
 ---
