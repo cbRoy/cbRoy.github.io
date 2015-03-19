@@ -5,7 +5,7 @@ require 'rubygems'
     require 'yaml'
     require 'tmpdir'
     require 'jekyll'
-message = "Site updated at #{Time.now.utc}"
+
     desc "Generate blog files"
     task :generate do
       Jekyll::Site.new(Jekyll.configuration({
@@ -16,6 +16,7 @@ message = "Site updated at #{Time.now.utc}"
 
 	desc "Update master branch"
 	task :update => [:generate] do
+		message = "Site updated at #{Time.now.utc}"
 		system "git add --all ."
 		system "git commit -am #{message.shellescape}"
 		system "git push origin master"

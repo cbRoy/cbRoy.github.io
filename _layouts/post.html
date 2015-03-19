@@ -3,54 +3,18 @@ layout: default
 ---
 
 <article>
-<header>
-<h2>{{ page.title }}</h2>
-<span><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-<span class="category"><i class="fa fa-tags "></i> {{ page.categories | category_links }}</span><br/>
-<span class="author"><i class="icon-user"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
-</header>
-<div class="entry">{{ content }}</div>
-<footer><!-- additional info --></footer>
+	<header>
+		<h2>{{ page.title }}</h2>
+		<span><i class="fa fa-clock-o fa-fw"></i> <time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
+		<span class="category"><i class="fa fa-tags fa-fw"></i> {{ page.categories | category_links }}</span><br/>
+		<span class="author"><i class="fa fa-user fa-fw"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
+	</header>
+	
+	<div class="entry">
+		{{ content }}
+	</div>
+
+	<footer>
+		<small>{{ page.date | date: "%x" }}</small>
+	</footer>
 </article>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="author" content="Christofer Roy" />
-<title>{{ page.title }}</title>
-<link rel="stylesheet" href="/css/reset.css">
-<link rel="stylesheet" href="/css/new.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,800,400' rel='stylesheet' type='text/css'>
-<link rel="image_src" href="{{ page.thumbnail }}" />
-<script type="text/javascript" src="/js/jquery-2.1.3.min.js" ></script>
-<script type="text/javascript" src="/js/functions.js"></script>
-</head>
-<body id="{{ page.tags }}">
-<section id="content">
-<nav><a href="/">&#8962;</a></nav>
-<header>
-<h1><a href="#">{{ page.title }}</a></h1>
-</header>
-<article>
-{{ content }}
-</article>
-<footer>
-<small>{{ page.date | date: "%x" }}</small>
-</footer>
-</section>
-<script type="text/javascript">
-var _gauges = _gauges || [];
-(function() {
-var t = document.createElement('script');
-t.type = 'text/javascript';
-t.async = true;
-t.id = 'gauges-tracker';
-t.setAttribute('data-site-id', '50e227ad613f5d56c900000d');
-t.src = '//secure.gaug.es/track.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(t, s);
-})();
-</script>
-</body>
--->
