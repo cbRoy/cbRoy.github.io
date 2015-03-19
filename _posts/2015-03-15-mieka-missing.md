@@ -1,7 +1,8 @@
 ---
 title: Mieka is Missing
 layout: post
-categories: mieka pets
+categories: pets
+tags: Mieka
 ---
 
 Mieka has been missing since Thursday, March 12th, 2015. <br/>

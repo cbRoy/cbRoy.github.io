@@ -6,7 +6,12 @@ layout: default
 	<header>
 		<h2>{{ page.title }}</h2>
 		<span><i class="fa fa-clock-o fa-fw"></i> <time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-		<span class="category"><i class="fa fa-tags fa-fw"></i> {{ page.categories | category_links }}</span><br/>
+		<span class="category"><i class="fa fa-folder-open-o fa-fw"></i> {{ page.categories | category_links }}</span> 
+		{% if page.tags %}
+		<span>{% if page.tags.size > 1 %}<i class="fa fa-tags fa-fw"></i>
+			{% else %}<i class="fa fa-tag fa-fw"></i>
+			{% endif %}{{ page | tags}} </span>
+		{% endif %}<br/>
 		<span class="author"><i class="fa fa-user fa-fw"></i> {% if page.author %}{{page.author}}{% else %}{{site.author}}{% endif%}</span>
 	</header>
 	

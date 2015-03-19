@@ -1,8 +1,8 @@
 ---
-title: Best. Day. Ever.
 layout: post
-tags: Ayden Mieka
+title: Best! Day! Ever!
 categories: baby pets
+tags: Ayden Mieka
 ---
 
 Our day started pretty early, actually it started yesterday when we first arrived at the hospital around 9pm.

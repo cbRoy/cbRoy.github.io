@@ -14,7 +14,7 @@ require 'rubygems'
       })).process
     end
 
-	desc "Update master branch"
+	desc "Generate blog files and update master branch with source"
 	task :update => [:generate] do
 		message = "Site updated at #{Time.now.utc}"
 		system "git add --all ."
@@ -22,7 +22,7 @@ require 'rubygems'
 		system "git push origin master"
 	end
 
-    desc "Generate and publish blog to gh-pages"
+    desc "Update master and publish blog to gh-pages"
     task :publish => [:update] do
       Dir.mktmpdir do |tmp|
         system "mv _site/* #{tmp}"

@@ -23,19 +23,21 @@
         <nav>
 
             <ul>
-                <li><i class="fa fa-home fa-fw"></i>   <a href="{{site.baseurl}}/">Home</a></li>
-                <li><i class="fa fa-envelope-o fa-fw"></i>   <a href="{{site.baseurl}}/contact">Contact</a></li>
-                <li><i class="fa fa-archive fa-fw"></i>     <a href="{{site.baseurl}}/archive">Archive</a></li>
+                <li><i class="fa fa-home fa-fw"></i> <a href="{{site.baseurl}}/">Home</a></li>
+                <li><i class="fa fa-envelope-o fa-fw"></i> <a href="{{site.baseurl}}/contact">Contact</a></li>
+                <li><i class="fa fa-archive fa-fw"></i> <a href="{{site.baseurl}}/archive">Archive</a></li>
             </ul>
-<!--
-            <h3>Second Heading</h3>
-
+            
+            <h3>Categories</h3>
             <ul>
-                <li><i class="icon-link"></i>   <a href="#">Link 1</a></li>
-                <li><i class="icon-link"></i>   <a href="#">Link 2</a></li>
-                <li><i class="icon-link"></i>   <a href="#">Link 3</a></li>
-            </ul>
--->
+			{% for category in site.categories %}
+                <li><i class="fa fa-fw {{category | first}}"></i>   <a href="{{ category | first }}">{{ category | first }}</a></li>
+            {% endfor %}
+             </ul>
+             {% comment %}
+				This uses the category name as a class name. functions.js then adds the 
+				necessary fa-? classname to display an appropriate icon
+			 {% endcomment %}
         </nav>
 
         <main>

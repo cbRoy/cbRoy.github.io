@@ -2,6 +2,7 @@
 title: Ayden Beckett Roy is almost here!
 layout: post
 category: baby
+tags: Ayden
 ---
 We went to the hospital Saturday morning around 6am. Her mucus plug had come out. 
 
