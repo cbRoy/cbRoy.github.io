@@ -5,4 +5,5 @@ $(document).ready(function(){
 	});
 	$(".pets").addClass("fa-paw");
 	$(".baby").addClass("fa-child");
+	$(".programming").addClass("fa-tasks");
 });
