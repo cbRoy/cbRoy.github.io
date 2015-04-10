@@ -32,4 +32,4 @@ permalink: pretty
 paginate: 5
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile']
+exclude: ['.gitignore', 'Gemfile', 'Gemfile.lock', 'Rakefile']
