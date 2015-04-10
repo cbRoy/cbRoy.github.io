@@ -26,14 +26,16 @@ desc "Generate and publish blog to gh-pages"
 	task :publish => [:generate] do
 		Dir.mktmpdir do |tmp|
 		sh "mv _site/* #{tmp}"
-		sh "git checkout -B gh-pages"
-		sh "rm -rf *"
-		sh "mv #{tmp}/* ."
-		message = "Site updated at #{Time.now.utc}"
-		sh "git add ."
-		sh "git commit -am #{message.shellescape}"
-		sh "git push origin gh-pages --force"
-		# sh "git checkout master"
+		Dir.chdir('_site') do
+			sh "git checkout -B gh-pages"
+			sh "rm -rf *"
+			sh "mv #{tmp}/* ."
+			message = "Site updated at #{Time.now.utc}"
+			sh "git add ."
+			sh "git commit -am #{message.shellescape}"
+			sh "git push origin gh-pages --force"
+			# sh "git checkout master"
+		end
 	end
 end
 
