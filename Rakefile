@@ -34,8 +34,8 @@ desc "Generate and publish blog to gh-pages"
 			system "mv #{tmp}/* ."
 			message = "Site updated at '#{Time.now.utc}'"
 			system "git add ."
-			system "git commit -am #{message.shellescape}"
-			system "git push origin gh-pages --force"
+			system "git commit --allow-empty -m #{message.shellescape}"
+			system "git push origin gh-pages"
 			# system "git checkout master"
 		end
 	end
