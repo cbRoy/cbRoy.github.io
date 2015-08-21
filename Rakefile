@@ -17,7 +17,7 @@ end
 
 desc "Update master branch with source"
 task :update do
-	message = "Site updated at #{Time.now.utc}"
+	message = "Site source updated at #{Time.now.utc}"
 	system "git checkout master"
 	system "git add --all ."
 	system "git commit --allow-empty -m #{message.shellescape}"
