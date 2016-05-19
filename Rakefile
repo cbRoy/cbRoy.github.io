@@ -17,7 +17,10 @@ end
 
 desc "Update master branch with source"
 task :update do
-	message = "Site source updated at #{Time.now.utc}"
+	args = ARGV.drop(1)
+	message = "Site source updated at #{Time.now.utc}. "
+	args[0] = '' if args[0].nil? || args[0].empty?
+	message += args[0];
 	system "git checkout master"
 	system "git add --all ."
 	system "git commit --allow-empty -m #{message.shellescape}"
@@ -26,6 +29,8 @@ end
 
 desc "Generate and publish blog to gh-pages"
 	task :publish do
+		args = ARGV.drop(1);
+		args[0] = '' if args[0].nil? || args[0].empty?
 		puts "Checking for gh-pages dir..."
 		unless File.exist?("./gh-pages")
 			puts "Creating gh-pages dir..."
@@ -66,9 +71,10 @@ desc "Generate and publish blog to gh-pages"
     # Commit and push.
 		puts "Committing and pushing to GitHub Pages..."
 		sha = `git rev-parse HEAD`.strip
+		message = "Updating to #{sha}. " + args[0];
 		Dir.chdir('gh-pages') do
 			sh "git add --all ."
-			sh "git commit --allow-empty -m 'Updating to #{sha}.'"
+			sh "git commit --allow-empty -m '#{message}'"
 			sh "git push origin gh-pages"
 		end
 		puts 'Done.'
